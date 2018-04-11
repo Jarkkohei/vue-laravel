@@ -3,7 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <app-new-quote></app-new-quote>
+                    <router-link to="/">Quotes</router-link> |
+                    <router-link to="/new-quote">New Quote</router-link>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
@@ -11,20 +18,15 @@
 </template>
 
 <script>
-    import NewQuote from './components/new-quote.vue';
-
     export default {
         data () {
-            return {
-
-            }
-        },
-        components: {
-            'app-new-quote': NewQuote
+            return {}
         }
     }
 </script>
 
 <style>
-
+    #app {
+        margin: 30px;
+    }
 </style>
