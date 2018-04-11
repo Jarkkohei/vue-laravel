@@ -8,8 +8,8 @@ import NewQuote from './components/new-quote.vue';
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '', component: Quotes},
-    { path: 'new-quote', component: NewQuote}
+    { path: '/', component: Quotes },
+    { path: '/new-quote', component: NewQuote }
 ];
 
 const router = new VueRouter({

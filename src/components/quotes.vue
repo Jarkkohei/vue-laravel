@@ -2,7 +2,7 @@
     <div>
         <button class="btn btn-primary" @click="onGetQuotes">Get Quotes</button>
         <hr>
-        <app-quote v-for="quote in quotes" :qt="quote"></app-quote>
+        <app-quote v-for="quote in quotes" :qt="quote" @quoteDeleted="onQuoteDeleted($event)"></app-quote>
     </div>
 </template>
 
@@ -24,6 +24,12 @@ import axios from 'axios';
                         this.quotes = response.data.quotes;
                     })
                     .catch(error => console.log(error));
+            },
+            onQuoteDeleted(id) {
+                const position = this.quotes.findIndex((element) => {
+                    return element.id == id;
+                });
+                this.quotes.splice(position, 1);
             }
         },
         components: {
